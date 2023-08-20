@@ -1,0 +1,6 @@
+com\hrm\LogoutHandler.class
+com\hrm\ThehrmApplication.class
+com\hrm\JobController.class
+com\hrm\JobItems.class
+com\hrm\JobRepository.class
+com\hrm\SecurityConfig.class

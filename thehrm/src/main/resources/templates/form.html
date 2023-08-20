@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Centered Application Form</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+		@media screen and (device-width: 360px) and (device-height: 640px) and (min-resolution: 192dpi) and (-webkit-device-pixel-ratio: 3) {}
+
+		@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {}
+
+		/* ----------- Retina Screens ----------- */
+		@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
+
+		body {
+			background-repeat: no-repeat;
+			font-family: 'Quicksand', sans-serif;
+			transition: border-color 0.3s ease-in-out;
+			background: #808080;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #3fada8, #808080);
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #3fada8, #808080);
+			/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+		}
+
+		.form-container {
+
+			padding: 20px;
+
+		}
+
+		.container-fluid p {
+			font-size: 20px;
+			font-weight: 500;
+
+		}
+
+		.container-fluid {
+			box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+			background-color: aliceblue;
+			font-family: 'Quicksand', sans-serif;
+			transition: border-color 0.3s ease-in-out;
+			font-size: 17px;
+			letter-spacing: 0.3;
+			font-weight: 500;
+			width: 700px;
+			border-radius: 10px;
+			align-self: center;
+			border: 2px solid rgba(122, 192, 243, 0.475);
+			margin-top: 20px;
+			margin-bottom: 20px;
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="">
+		<div class="container">
+			<a href="/">
+				<h3 style="color:#fff;text-decoration: none">The HRM</h3>
+			</a>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<br />
+		<p class="text-center">Post Your Job Here</p>
+		<div class="form-container">
+			<h2 class="text-center"> API Form</h2>
+
+			<form action="/job/add/new" method="post">
+				<div class="form-group">
+					<label for="name">Job ID</label>
+					<input type="text" name="id" id="id" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="title">Job Title</label>
+					<input type="text" name="title" id="title" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="name">Company name</label>
+					<input type="text" name="company_name" id="company_name" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="location">Location</label>
+					<input type="text" name="location" id="location" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="desc">Job Description</label>
+					<textarea name="description" id="description" class="form-control"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="phone">Company Logo</label>
+					<input type="text" name="imageUrl" id="imageUrl" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="phone">Job Type</label>
+					<input type="text" name="job_types" id="job_types" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="phone">Age</label>
+					<input type="text" name="age" id="age" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="title">Email</label>
+					<input type="text" name="email" id="email" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="phone">Date</label>
+					<input type="date" name="Date" id="Date" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="phone">Apply Url</label>
+					<input type="text" name="url" id="url" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label for="phone">Post on</label>
+					<input type="text" name="posted_on" id="posted_on" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label for="phone">Experience</label>
+					<input type="text" name="experience" id="experience" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="phone">Salary</label>
+					<input type="text" name="salary" id="salary" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="phone">Requirements</label>
+					<input type="text" name="Requirements" id="Requirements" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label for="phone">Shift and schedule</label>
+					<input type="text" name="Shift_and_schedule" id="Shift_and_schedule" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="phone">Required Degree</label>
+					<input type="text" name="degree" id="degree" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="phone">Benefits & Perks</label>
+					<input type="text" name="benefits_perks" id="benefits_perks" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="phone">Posted By</label>
+					<input type="text" name="posted_by" id="posted_by" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="phone">Test and Task </label>
+					<input type="text" name="task" id="task" class="form-control">
+				</div>
+
+				<div class="form-group">
+					<label for="phone">Number of openings </label>
+					<input type="text" name="openings" id="openings" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="phone"> Langauge</label>
+					<input type="text" name="langauge" id="langauge" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="phone">Skill </label>
+					<input type="text" name="skills" id="skills" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="">Key Responsibility </label>
+					<input type="text" name="key_responsibility" id="key_responsibility" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="">HR Contact No </label>
+					<input type="text" name="phone" id="phone" class="form-control">
+				</div>
+				<input type="submit" class="btn btn-primary btn-block" value="Post Job" />
+			</form>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

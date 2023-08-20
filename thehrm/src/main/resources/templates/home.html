@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Centered Application Form</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+		@media screen and (device-width: 360px) and (device-height: 640px) and (min-resolution: 192dpi) and (-webkit-device-pixel-ratio: 3) {}
+
+		@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {}
+
+		/* ----------- Retina Screens ----------- */
+		@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
+
+		body {
+
+			background-repeat: no-repeat;
+			font-family: 'Quicksand', sans-serif;
+			transition: border-color 0.3s ease-in-out;
+			background: #8e9eab;
+			background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
+			background: linear-gradient(to right, #eef2f3, #8e9eab);
+		}
+
+		.container-fluid {
+			box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+			background-color: aliceblue;
+			font-family: 'Quicksand', sans-serif;
+			transition: border-color 0.3s ease-in-out;
+			font-size: 17px;
+			letter-spacing: 0.3;
+			font-weight: 600;
+			color: #0a9ee8e1;
+
+			margin-left: 20px;
+			border-radius: 10px;
+		}
+
+		.form-container {
+			width: 90%;
+
+
+		}
+
+		.form-group p {
+			font-family: 'Quicksand', sans-serif;
+			font-size: 17px;
+			font-weight: 400;
+			color: rgba(0, 0, 0, 0.648);
+		}
+
+		.form-group {
+			margin-left: 10px;
+
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar bg-body-tertiary bg-dark">
+		<div class="container-sm">
+			<a href="/">
+				<h3 style="color:#fff;text-decoration: none">The HRM</h3>
+			</a>
+			<a href="/job/form" style="color:#fff;text-decoration: none">post job</a>
+		</div>
+	</nav>
+	<div class="form-container">
+		<div class="container-fluid"><br />
+			<p class="text-center">New Opennings</p><br />
+			<div th:each="item : ${items}"
+				style="border-bottom: 1px solid rgb(153, 65, 229);border-top: 1px solid rgb(153, 65, 229);">
+				<div class="form-group">					
+					<br />
+					Date of posting : <p th:text="${item.Date}"></p>
+				</div>
+				<div class="form-group">
+					Job ID :<p th:text="${item.id}"></p>
+					Title :<p th:text="${item.title}"></p>
+				</div>
+
+				<div class="form-group" style="width: fit-content;padding: 5px;">
+					Company Name : &nbsp;<br />
+					<img th:src="${item.imageUrl}" style="height: 50px;width: 50px;border-radius: 10px;" />
+					<p th:text="${item.company_name}"></p>
+				</div>
+				<div class="form-group">
+					Number Of Opennings :<p th:text="${item.openings}"></p>
+					Location :<p th:text="${item.location}"></p>
+				</div>
+				<div class="form-group">
+					Age :<p th:text="${item.age}"></p>
+					Experience : <p th:text="${item.experience}"></p>
+					Requirements : <p th:text="${item.Requirements}" style="text-align: justify;max-width: 600px;"></p>
+				</div>
+				<div class="form-group">
+					Salary :<p th:text="${item.salary}"></p>
+					Job Types :<p th:text="${item.job_types}"></p>
+					Description :<p th:text="${item.description}" style="text-align: justify;max-width: 600px;">
+					</p>
+				</div>
+				<div class="form-group">
+					Role and Responsibility : <p th:text="${item.key_responsibility}"
+						style="text-align: justify;max-width: 600px;"></p>
+					Skills Required : <p th:text="${item.skills}"></p>
+					Degree :<p th:text="${item.degree}"></p>
+					Langauge :<p th:text="${item.langauge}"></p>
+					Benefits and Perks:<p th:text="${item.benefits_perks}"></p>
+				</div>
+				<div class="form-group">
+					Posted By :<p th:text="${item.posted_by}"></p>
+					Posted On :<p th:text="${item.posted_on}"></p>
+					Email At:<p th:text="${item.email}"></p>
+					HR contact :<p th:text="${item.phone}"></p> <br>
+					<a href="${item.url}" th:href="${item.url}" class="btn btn-secondary">Apply Now</a>
+
+				</div>
+				<div>
+				</div>
+
+			</div>
+			
+		</div>
+		
+	</div>	
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
